@@ -1,25 +1,17 @@
-/*
- *
- * CSS written based on SMACSS architecture.
- * To learn more, visit: http://smacss.com/
- * 
- * For simplicity, no reset or normalize is added. 
- * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
- *
-*/
-
-
-/* ---- Base Rules ---- */
+/* The Base rules */
+html {
+    /* scroll-behavior: smooth; */
+}
 body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    /* border: 1px solid red; */
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
 }
 
-
-/* Typeography General*/
+/* General Typography */
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
@@ -45,15 +37,28 @@ p {
     color: #eee;
 }
 
-/* ---- Layout Rules ---- */
-main {
-    margin: 10vh 1em 10vh;
+/* Header Styles */
+.page__header {
+    /* background: rgb(97, 173, 245); */
+    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    border: 1px solid blue;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
 }
 
-.main-hero {
+/* ---- Layout Rules ---- */
+main {
+    margin: 17vh 0em 10vh;
+    /* border: 1px solid red; */
+}
+
+/* .main-hero {
     min-height: 40vh;
     padding-top: 3em;
-}
+    border: 1px solid green;
+} */
 
 section {
     position: relative;
@@ -78,7 +83,7 @@ section {
     display: block;
     padding: 1em;
     font-weight: bold;
-    text-decoration: none;
+    /* text-decoration: none; */
     color: #000;
 }
 
@@ -88,20 +93,27 @@ section {
     transition: ease 0.3s all;
 }
 
-/* Header Styles */
-.page__header {
-    background: #fff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 5;
+.navbar-toggler {
+    display: none;
 }
+
+/* Main header styles */
+.main__hero {
+    background-image: url(/images/homepage-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 60vh;
+    /* border: 1px solid #fff; */
+}
+
 
 /* Footer Styles */
 .page__footer {
     background: #000;
     padding: 3em;
     color: #fff;
+    /* border: 1px solid blue; */
 }
 
 .page__footer p{
@@ -110,6 +122,13 @@ section {
 
 
 /* ---- Theme Rules ---- */
+/* Landing Container Styles */
+/* .landing__container {
+    padding: 1em;
+    text-align: left;
+} */
+
+/* Theme Rules */
 /* Landing Container Styles */
 .landing__container {
     padding: 1em;
@@ -126,8 +145,9 @@ section {
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
-    text-align: right; 
+    text-align: right;
 }
+
 
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
@@ -137,8 +157,8 @@ section:nth-of-type(odd) .landing__container::before {
     background: rgba(255, 255, 255, 0.187);
     position: absolute;
     z-index: -5;
-    width: 20vh;
-    height: 20vh;
+    width: 10vh;
+    height: 10vh;
     border-radius: 50%;
     opacity: 0;
     transition: ease 0.5s all;
@@ -152,8 +172,8 @@ section:nth-of-type(even) .landing__container::before {
     top: 3em;
     right: 3em;
     z-index: -5;
-    width: 10vh;
-    height: 10vh;
+    width: 7vh;
+    height: 7vh;
     border-radius: 50%;
     opacity: 0;
     transition: ease 0.5s all;
@@ -167,8 +187,8 @@ section:nth-of-type(3n) .landing__container::after {
     right: 0;
     bottom: 0;
     z-index: -5;
-    width: 10vh;
-    height: 10vh;
+    width: 7vh;
+    height: 7vh;
     border-radius: 50%;
     opacity: 0;
     transition: ease 0.5s all;
@@ -182,8 +202,8 @@ section:nth-of-type(3n + 1) .landing__container::after {
     right: 20vw;
     bottom: -5em;
     z-index: -5;
-    width: 15vh;
-    height: 15vh;
+    width: 10vh;
+    height: 10vh;
     border-radius: 50%;
     opacity: 0;
     transition: ease 0.5s all;
@@ -209,7 +229,7 @@ section.your-active-class .landing__container::after {
 }
 
 /* Section Active Styles Keyframe Animations */
-@keyframes rotate {
+/* @keyframes rotate {
 	from {
 		transform: rotate(0deg)
 		           translate(-1em)
@@ -220,4 +240,80 @@ section.your-active-class .landing__container::after {
 		           translate(-1em) 
 		           rotate(-360deg);
 	}
+} */
+
+
+#contact {
+    background-image: url(./img/bg-3.jpg); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    /* height: 580px;  */
 }
+        #contact form {
+            padding: 70px 10px 50px 10px;
+        }
+            #contact h2 {
+                padding-bottom: 20px; 
+                color: rgba(255, 255, 255, 0.7); 
+                text-align: center; 
+                text-shadow: 1px 1px rgba(255,255,255,0.4);
+            }
+            .inputbox {
+                width: 100%; 
+                height: 110px; 
+                border-radius: 5px; 
+                background-color: rgba(242,242,242,0.4); 
+                border: 0; 
+                outline: 0;
+                padding: 10px 50px 50px 50px; 
+                text-align: center; 
+                color: blueviolet;
+            }
+           
+            .inputbox::placeholder {
+                color: black;
+                white-space: normal;
+            }
+            .inputbox:focus::placeholder {
+            color: rgb(226, 226, 198);
+            }
+                .contact_info > input {
+                    width: 97%;
+                    height: 33px;
+                    background-color: rgba(242,242,242,0.4); 
+                    border: 0; 
+                    border-radius: 3px; 
+                    padding: 6px 10px; 
+                    outline: 0;
+                }
+                #username::placeholder, #email_address::placeholder, #subject::placeholder {
+                    color: black;
+                    font-size: 14px;
+                }
+                .user_message > textarea {
+                    width: 97%; 
+                    float: right;
+                    background-color: rgba(255,255,255,0.4); 
+                    border: 0; 
+                    border-radius: 3px; 
+                    padding: 5px 10px; 
+                    margin-bottom: 20px; 
+                    outline: 0;
+                }
+            .submission {
+                display: flex;
+            }
+                .submission button {
+                    width: 100%;
+                    margin-left: 10px; 
+                    padding: 10px 30px; 
+                    background-color: rgba(15, 10, 10, 0.9); 
+                    color: #fff; 
+                    border: 1px solid #fff; 
+                    border-radius: 10px; 
+                    outline: 0;
+                }
+                #submission_button:hover {
+                    color: black;
+                    background-color: #fff;
+                }
