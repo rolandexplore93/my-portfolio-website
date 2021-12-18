@@ -1,7 +1,5 @@
 /* The Base rules */
-html {
-    /* scroll-behavior: smooth; */
-}
+
 body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
@@ -41,7 +39,6 @@ p {
 .page__header {
     /* background: rgb(97, 173, 245); */
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
-    border: 1px solid blue;
     position: fixed;
     top: 0;
     width: 100%;
@@ -53,12 +50,6 @@ main {
     margin: 17vh 0em 10vh;
     /* border: 1px solid red; */
 }
-
-/* .main-hero {
-    min-height: 40vh;
-    padding-top: 3em;
-    border: 1px solid green;
-} */
 
 section {
     position: relative;
@@ -119,14 +110,6 @@ section {
 .page__footer p{
     color: #fff;
 }
-
-
-/* ---- Theme Rules ---- */
-/* Landing Container Styles */
-/* .landing__container {
-    padding: 1em;
-    text-align: left;
-} */
 
 /* Theme Rules */
 /* Landing Container Styles */
@@ -228,6 +211,11 @@ section.your-active-class .landing__container::after {
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
 
+.activenow-class {
+    background: rgb(189, 202, 147);
+}
+
+
 /* Section Active Styles Keyframe Animations */
 /* @keyframes rotate {
 	from {
@@ -247,7 +235,6 @@ section.your-active-class .landing__container::after {
     background-image: url(./img/bg-3.jpg); 
     background-size: cover; 
     background-repeat: no-repeat; 
-    /* height: 580px;  */
 }
         #contact form {
             padding: 70px 10px 50px 10px;
