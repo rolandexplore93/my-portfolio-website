@@ -105,7 +105,7 @@ function addOrRemoveActiveClass(sectionId){
 
 // Scroll to anchor ID using scrollTO event
 // (MY SCROLL DIDN'T WORK WHEN I SCROLL TO THE PAGE FOR MY ACTIVE 
-// STATE TO BE HIGHLIGHT ON SCROLL.. BELOW IS THE CODE)
+// STATE TO BE HIGHLIGHTED ON SCROLL.. BELOW IS THE CODE)
 
 // window.addEventListener("scroll", function(){
 //     scrollActive();
