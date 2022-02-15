@@ -137,3 +137,15 @@ function addOrRemoveActiveClass(sectionId){
 
 // Set sections as active
 
+function responsiveMenu(){
+    const getnavbar__list = document.getElementById('cont');
+    console.log(getnavbar__list);
+
+    if (getnavbar__list.className === "cont"){
+        getnavbar__list.className += " responsive"
+    } else {
+        getnavbar__list.className = "cont"
+    }
+}
+
+responsiveMenu()
