@@ -619,25 +619,29 @@ section {
 /* Mobile devices (smartphones) */
 @media only screen and (max-width: 480px){
     .skill {
-        padding: 0 40px 0 20px;
-        margin-top: 120px;
+        padding: 80px 40px 0 20px;
+        margin-top: 0px;
     }
 }
 
 /* Ipads, Tablets */
 @media only screen and (max-width: 768px){
     .skill {
-        padding: 0 40px 0 20px;
-        margin-top: 120px;
+        padding: 80px 40px 0 20px;
+        margin-top: 0px;
     }
 }
 
 /* ----------------- Projects --------------- */
+#project {
+    /* border: 1px solid red; */
+    padding-top: 10px;
+}
 
 .project__dir {
     /* border: 1px solid #FFC107; */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
     gap: 20px;
     place-content: center center;
 }
@@ -772,13 +776,14 @@ button[type="submit"]:hover {
     
     #project {
         /* border: 2px solid red; */
+        box-sizing: border-box;
         padding-left: 20px;
     }
 
     .project {
-        margin-top: 100px;
+        margin-top: 0px !important;
         margin-bottom: 30px;
-
+        padding-top: 80px;
     }
 }
 
@@ -790,8 +795,10 @@ button[type="submit"]:hover {
     }
 
     .project {
-        margin-top: 100px;
+        /* margin-top: 100px; */
+        margin-top: 0px !important;
         margin-bottom: 30px;
+        padding-top: 80px;
     }
 }
 
@@ -821,6 +828,7 @@ button[type="submit"]:hover {
     /* border: 1px solid red; */
     display: flex;
     gap: 80px;
+    padding-top: 100px;
 }
 
 #contact form {
@@ -917,6 +925,7 @@ button[type="submit"]:hover {
 .submission {
     display: flex;
 }
+
 .submission button {
     width: 100%;
     padding: 10px 30px; 
