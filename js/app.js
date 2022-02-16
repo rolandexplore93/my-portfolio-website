@@ -1,187 +1,151 @@
-// /**
-//  * 
-//  * Manipulating the DOM exercise.
-//  * Exercise programmatically builds navigation,
-//  * scrolls to anchors from navigation,
-//  * and highlights section in viewport upon scrolling.
-//  * 
-//  * Dependencies: None
-//  * 
-//  * JS Version: ES2015/ES6
-//  * 
-//  * JS Standard: ESlint
-//  * 
-// */
+/**
+ * 
+ * Manipulating the DOM exercise.
+ * Exercise programmatically builds navigation,
+ * scrolls to anchors from navigation,
+ * and highlights section in viewport upon scrolling.
+ * 
+ * Dependencies: None
+ * 
+ * JS Version: ES2015/ES6
+ * 
+ * JS Standard: ESlint
+ * 
+*/
 
-// /**
-//  * Comments should be present at the beginning of each procedure and class.
-//  * Great to have comments before crucial code sections within the procedure.
-// */
+/**
+ * Comments should be present at the beginning of each procedure and class.
+ * Great to have comments before crucial code sections within the procedure.
+*/
 
-// /**
-//  * Define Global Variables
-//  * 
-// */
-// const sections = document.querySelectorAll('[data-nav]');
-// const navContainer = document.getElementById("navbar__list");   //get the ul navbar container
-// let navLink;
+/**
+ * Define Global Variables
+ * 
+*/
 
-// console.log(sections)
-// console.log(navContainer)
+//find the navbar location and get the section items
+const navList = document.getElementById("navbar__list") ;
+const allSection = Array.from(document.getElementsByTagName("section"));
 
-// /**
-//  * End Global Variables
-//  * 
-//  * Start Helper Functions
-//  * 
-// */
+/**
+ * End Global Variables
+ * Start Helper Functions
+ * 
+*/
 
 
 
-// /**
-//  * End Helper Functions
-//  * Begin Main Functions
-//  * 
-// */
+/**
+ * End Helper Functions
+ * Begin Main Functions
+ * 
+*/
 
-// // build the nav
-// //create an array of objects to store the nav items data
-// const navLinks = [
-//     {
-//         id: "#",
-//         text: "Home",
-//         classes: ["menu__link", "home", "active-class"]
-//     },
-//     {
-//         id: "#about",
-//         text: "About",
-//         classes: ["menu__link", "section1", "active-class"]
-//     },
-//     {
-//         id: "#services",
-//         text: "Services",
-//         classes: ["menu__link", "section2", "active-class"]
-//     },
-//     {
-//         id: "#contact",
-//         text: "Contact",
-//         classes: ["menu__link", "section3", "active-class"]
-//     },
-//     {
-//         id: "#login",
-//         text: "Login",
-//         classes: ["menu__link", "section4", "active-class"]
-//     },
-//     // {
-//     //     id: "",
-//     //     text: "X",
-//     //     classes: ["navbar-toggler"]
-//     // },
-// ]
+// build the nav
+//create the li element and insert it into navList
+function createNavItems(){
 
-// // console.log(navLinks)
+    for (section of allSection){
+    
+        const navItem = document.createElement("li"); //create li element
+        const navLink = document.createElement("a");  //create anchor link element
 
-// function createNavItems(){
+        //get section data-nav attribute and id
+        const sectionData = section.getAttribute("data-nav");
+        const sectionIdTag = section.getAttribute("id");
+            
+        navLink.classList.add("menu__link");
+        navLink.innerHTML = sectionData;
+        navLink.setAttribute("href", `#${sectionIdTag}`) //set href attribute on anchor element
+        navLink.setAttribute("data-link", `#${sectionIdTag}`) //set data-link attribute on anchor element
+    
+        navItem.appendChild(navLink);
+        navList.appendChild(navItem)
 
-//     //use for-of-loop to iterate over the array of objects to create navbar items
-//     for (const link of navLinks){
-//         const navItem = document.createElement("li"); //create li element
-//         const navLink = document.createElement("a");  //create anchor link element
-//         navLink.href = link.id;
-//         navLink.setAttribute("id", link.id);
-//         navLink.textContent = link.text;
-//         navLink.classList.add(...link.classes);
+    }
 
-//         navItem.appendChild(navLink); //create li items
+}
+createNavItems()
 
-//         //append li elements to the nav container and display on the UI
-//         navContainer.appendChild(navItem);
-//     }
+const links = document.querySelectorAll(".menu__link")
 
-//     console.log(navContainer);
-//     return navContainer;
+for (const link of links){
+    const sectionId = link.getAttribute("data-link");
 
-// }
-// createNavItems()
+    link.addEventListener("click", function(e){
+        e.preventDefault();
+        linkToScrollIntoView(sectionId);
+        addOrRemoveActiveClass(sectionId);
+    })
+}
 
-// // const navbarToggler = document.querySelector(".navbar-toggler");
-// // navbarToggler.addEventListener("click", navbarTogglerClick);
+function linkToScrollIntoView(sectionId){
+    window.scrollTo({
+        top: sectionId === "#" ? 56 : document.querySelector(sectionId).offsetTop,
+        behavior: "smooth"
+    })
+}
 
-// // function navbarTogglerClick() {
-// //     navbarToggler.classList.toggle("open-navbar-toggle");
-// //     navContainer.classList.toggle("open")
-// // }
-
-// // console.log(navItem)
-// const navbarLink = document.querySelectorAll(".menu__link");
-// console.log(navbarLink);
+// Add class 'active' to section when near top of viewport
+function addOrRemoveActiveClass(sectionId){
+    for (const link of links){
+        if(link.getAttribute("data-link") === sectionId){
+            link.classList.add("activenow-class");
+        } else {
+            if (link.classList.contains("activenow-class")){
+                link.classList.remove("activenow-class");           
+            }
+        }
+    }
+    
+}
 
 
-// navbarLink.forEach(element => element.addEventListener("click", navbarLinkClick));
 
-// function navbarLinkClick(evt){
 
-//     smoothScroll(evt);
+// Scroll to anchor ID using scrollTO event
+// (MY SCROLL DIDN'T WORK WHEN I SCROLL TO THE PAGE FOR MY ACTIVE 
+// STATE TO BE HIGHLIGHTED ON SCROLL.. BELOW IS THE CODE)
 
-//     if(navContainer.classList.contains("open")){//close navContainer
-//         navbarToggler.click();
+// window.addEventListener("scroll", function(){
+//     scrollActive();
+// })
+
+// function scrollActive() {
+//     for (section of allSection){
+//         const sectionRect = section.getBoundingClientRect();
+
+//         if (sectionRect.top <= 150 && sectionRect.bottom >= 150){
+//             section.classList.add("your-active-class");
+//         } else {
+//             if (section.classList.contains("your-active-class")){
+//                 section.classList.remove("your-active-class")
+//             }
+//         }
 //     }
 // }
 
-// // smooth-scrolling
-// function smoothScroll(evt){
-//     evt.preventDefault();
-//     //obtain the value of the href attribute and save it in a variable
-//     const targetId = evt.currentTarget.getAttribute("href")
-//     console.log(targetId)
-//     window.scrollTo({
-//         top: targetId === "#" ? 171 : document.querySelector(targetId).offsetTop,
-//         behavior: "smooth"        
-//     });
-// }
+/**
+ * End Main Functions
+ * Begin Events
+ * 
+*/
 
+// Build menu 
 
-// // Add class 'active' to section when near top of viewport
-// const allNav = document.getElementsByClassName("your-active-class");
-// console.log(allNav)
+// Scroll to section on link click
 
-// // Scroll to anchor ID using scrollTO event
+// Set sections as active
 
-// // document.addEventListener('scroll', function isSectionInViewport() {
+function responsiveMenu(){
+    const getnavbar__list = document.getElementById('cont');
+    console.log(getnavbar__list);
 
-// // 	sections.forEach( (section) => {
+    if (getnavbar__list.className === "cont"){
+        getnavbar__list.className += " responsive"
+    } else {
+        getnavbar__list.className = "cont"
+    }
+}
 
-
-// // 		if(window.scrollY >= section.offsetHeight) {
-
-
-// // 			section.classList.add("your-active-class");
-// //             console.log("correct")
-
-
-// // 		} else {
-
-
-// // 			section.classList.remove("your-active-class");
-// //             console.log("try again")
-
-
-// // 		}
-
-// // 	});
-
-// // });
-
-// /**
-//  * End Main Functions
-//  * Begin Events
-//  * 
-// */
-
-// // Build menu 
-
-// // Scroll to section on link click
-
-// // Set sections as active
-
-
+responsiveMenu()
