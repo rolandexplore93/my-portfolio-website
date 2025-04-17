@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      {!isLoaded && <LoadingScreen />}
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
     </>
   )
 }
