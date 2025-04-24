@@ -18,7 +18,8 @@ export const About = () => {
     
                 <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
                 <p className="text-gray-300 mb-6">
-                    Passionate developer with expertise in building scalable web applications and creating innovative solutions.
+                    Passionate developer with expertise in building scalable web applications and creating innovative solutions. Skilled in applying software development lifecycle (SDLC) and Object-Oriented Programming (OOP) best practices, with a strong foundation in Agile collaboration. 
+                    Eager to learn newer technologies, ready to tackle new challenges, contribute to and grow within dynamic teams.
                 </p>
     
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -84,21 +85,34 @@ export const About = () => {
                             <div>
                                 <h4 className="font-semibold">
                                 {" "}
-                                Software Engineer at ABC Corp (2020 - Present){" "}
+                                .NET Backend Developer at Hodanuk Ltd., UK <span className="text-xs">(Jul 2023 - Present)</span>{" "}
                                 </h4>
-                                <p>
-                                Developed and maintained microservices for cloud-based applications.
-                                </p>
+                                <ul className="list-disc list-inside text-gray-300 text-xs">
+                                    <li>Built and maintained merchant onboarding microservices with C# and ASP.NET Core, optimising API response times by 30% for high‑throughput financial transactions.</li>
+                                    <li>Accelerated database performance by 30% by refining queries in SQL Server and Entity Framework Core, ensuring faster data processing for over 5,000 businesses.</li>
+                                </ul>
                             </div>
-            
+                            <hr className="opacity-50"/>
                             <div>
                                 <h4 className="font-semibold">
                                 {" "}
-                                Intern at DEF Startups (2019){" "}
+                                Software Developer at Elixirmetrics Ltd <span className="text-xs">(Jan, 2023 - June 2023)</span>{" "}
                                 </h4>
-                                <p>
-                                Assisted in building front-end components and integration REST APIs
-                                </p>
+                                <ul className="list-disc list-inside text-gray-300 text-xs">
+                                    <li>Developed RESTful Web APIs to improve data synchronisation and reduce data sync errors by 35%.</li>
+                                    <li>Designed and implemented backend services for an e-commerce platform using C#, ASP.NET Core, and SQL Server, fixing complex bugs and ensuring compliance with coding standards.</li>
+                                </ul>
+                            </div>
+                            <hr className="opacity-50"/>
+                            <div>
+                                <h4 className="font-semibold">
+                                {" "}
+                                Junior Full-Stack Developer at Enlumi Insiight Limited <span className="text-xs">(Aug 2021 - Dec 2022)</span>{" "}
+                                </h4>
+                                <ul className="list-disc list-inside text-gray-300 text-xs">
+                                    <li>Designed and developed fintech and inventory applications with C#, .NET 6, React, TailwindCSS, JavaScript and Typescript, boosting customer engagement by 30% through intuitive UI/UX improvements.</li>
+                                    <li>Resolved concurrency and data consistency issues in a multi-tenant architecture, preventing repeated incidents and ensuring stable deployments.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>

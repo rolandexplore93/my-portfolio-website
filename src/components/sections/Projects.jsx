@@ -10,23 +10,22 @@ export const Projects = () => {
             <div className="max-w-5xl mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
                 {" "}
-                Featured Projects
+                    Featured Projects
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                        className="
+                    <div className="
                             glass p-6 rounded-xl border border-white/10 
                             hover:-translate-y-1 hover:border-blue-500/30
                             hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
                             transition-all
                         "
                     >
-                        <h3 className="text-xl font-bold mb-2">E-Commerce Web App</h3>
+                        <h3 className="text-xl font-bold mb-2">Warehousing and Accounting MS APIs</h3>
                         <p className="text-gray-400 mb-4">
-                        Full-stack e-commerce with modern UI, secure payment integration, and customizable product inventory.
+                        A robust back-end service built with C# and .NET Core 8, supporting end-to-end warehousing and accounting operations, including inventory tracking, invoice handling, and payment processing.
                         </p>
                         <div className="flex flex-wrap gap-2 mb-4">
-                        {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map((tech) => (
+                        {["C#", "ASP.NET Core / .NET 8", "Entity Framework", "SQL Server", "CQRS Patterns", "MediatR"].map((tech) => (
                             <span
                             key={tech}
                             className="
@@ -43,7 +42,7 @@ export const Projects = () => {
                         </div>
                         <div className="flex justify-between items-center">
                         <a
-                            href="#"
+                            href="https://storehouse360-backend.runasp.net/swagger/index.html"
                             className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                         >
                             View Project →
@@ -64,7 +63,7 @@ export const Projects = () => {
                         Full-stack e-commerce with modern UI, secure payment integration, and customizable product inventory.
                         </p>
                         <div className="flex flex-wrap gap-2 mb-4">
-                        {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map((tech) => (
+                        {["React.js", "JavaScript", "TypeScript", "Tailwind", "PostgreSQL"].map((tech) => (
                             <span
                             key={tech}
                             className="
@@ -81,7 +80,7 @@ export const Projects = () => {
                         </div>
                         <div className="flex justify-between items-center">
                         <a
-                            href="#"
+                            href="https://www.lumibusiness.io/storefront"
                             className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                         >
                             View Project →
@@ -89,8 +88,44 @@ export const Projects = () => {
                         </div>
                     </div>
 
-                    <div
-                        className="
+                    <div className="
+                            glass p-6 rounded-xl border border-white/10 
+                            hover:-translate-y-1 hover:border-blue-500/30
+                            hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
+                            transition-all
+                        "
+                    >
+                        <h3 className="text-xl font-bold mb-2">Inventory Management System</h3>
+                        <p className="text-gray-400 mb-4">
+                        Effortlessly track, manage, analyze, and optimize inventory with comprehensive suite of features ranging from sales analysis and employee access management to multi-store oversight and product enhancements. 
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                        {["React.js", "JavaScript", "TypeScript", "Tailwind", "PostgreSQL"].map((tech) => (
+                            <span
+                            key={tech}
+                            className="
+                                    bg-blue-500/10 text-blue-500 py-1 px-3 
+                                    rounded-full text-sm
+                                    transition
+                                    hover:bg-blue-500/20 hover:-translate-y-0.5
+                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
+                                "
+                            >
+                            {tech}
+                            </span>
+                        ))}
+                        </div>
+                        <div className="flex justify-between items-center">
+                        <a
+                            href="https://www.lumibusiness.io/inventory"
+                            className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+                        >
+                            View Project →
+                        </a>
+                        </div>
+                    </div>
+
+                    {/* <div className="
                             glass p-6 rounded-xl border border-white/10 
                             hover:-translate-y-1 hover:border-blue-500/30
                             hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
@@ -102,7 +137,7 @@ export const Projects = () => {
                         Full-stack e-commerce with modern UI, secure payment integration, and customizable product inventory.
                         </p>
                         <div className="flex flex-wrap gap-2 mb-4">
-                        {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map((tech) => (
+                        {["React.js", "JavaScript", "TypeScript", "Tailwind", "PostgreSQL"].map((tech) => (
                             <span
                             key={tech}
                             className="
@@ -125,45 +160,8 @@ export const Projects = () => {
                             View Project →
                         </a>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div
-                        className="
-                            glass p-6 rounded-xl border border-white/10 
-                            hover:-translate-y-1 hover:border-blue-500/30
-                            hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-                            transition-all
-                        "
-                    >
-                        <h3 className="text-xl font-bold mb-2">E-Commerce Web App</h3>
-                        <p className="text-gray-400 mb-4">
-                        Full-stack e-commerce with modern UI, secure payment integration, and customizable product inventory.
-                        </p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                        {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map((tech) => (
-                            <span
-                            key={tech}
-                            className="
-                                    bg-blue-500/10 text-blue-500 py-1 px-3 
-                                    rounded-full text-sm
-                                    transition
-                                    hover:bg-blue-500/20 hover:-translate-y-0.5
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                                "
-                            >
-                            {tech}
-                            </span>
-                        ))}
-                        </div>
-                        <div className="flex justify-between items-center">
-                        <a
-                            href="#"
-                            className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                        >
-                            View Project →
-                        </a>
-                        </div>
-                    </div>
                 </div>
             </div>
       </RevealOnScroll>
