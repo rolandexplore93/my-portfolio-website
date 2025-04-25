@@ -24,8 +24,8 @@
 */
 
 //find the navbar location and get the section items
-const navList = document.getElementById("navbar__list") ;
-const allSection = Array.from(document.getElementsByTagName("section"));
+// const navList = document.getElementById("navbar__list") ;
+// const allSection = Array.from(document.getElementsByTagName("section"));
 
 /**
  * End Global Variables
@@ -43,62 +43,62 @@ const allSection = Array.from(document.getElementsByTagName("section"));
 
 // build the nav
 //create the li element and insert it into navList
-function createNavItems(){
+// function createNavItems(){
 
-    for (section of allSection){
+//     for (section of allSection){
     
-        const navItem = document.createElement("li"); //create li element
-        const navLink = document.createElement("a");  //create anchor link element
+//         const navItem = document.createElement("li"); //create li element
+//         const navLink = document.createElement("a");  //create anchor link element
 
-        //get section data-nav attribute and id
-        const sectionData = section.getAttribute("data-nav");
-        const sectionIdTag = section.getAttribute("id");
+//         //get section data-nav attribute and id
+//         const sectionData = section.getAttribute("data-nav");
+//         const sectionIdTag = section.getAttribute("id");
             
-        navLink.classList.add("menu__link");
-        navLink.innerHTML = sectionData;
-        navLink.setAttribute("href", `#${sectionIdTag}`) //set href attribute on anchor element
-        navLink.setAttribute("data-link", `#${sectionIdTag}`) //set data-link attribute on anchor element
+//         navLink.classList.add("menu__link");
+//         navLink.innerHTML = sectionData;
+//         navLink.setAttribute("href", `#${sectionIdTag}`) //set href attribute on anchor element
+//         navLink.setAttribute("data-link", `#${sectionIdTag}`) //set data-link attribute on anchor element
     
-        navItem.appendChild(navLink);
-        navList.appendChild(navItem)
+//         navItem.appendChild(navLink);
+//         navList.appendChild(navItem)
 
-    }
+//     }
 
-}
-createNavItems()
+// }
+// createNavItems()
 
-const links = document.querySelectorAll(".menu__link")
+// const links = document.querySelectorAll(".menu__link")
 
-for (const link of links){
-    const sectionId = link.getAttribute("data-link");
+// for (const link of links){
+//     const sectionId = link.getAttribute("data-link");
 
-    link.addEventListener("click", function(e){
-        e.preventDefault();
-        linkToScrollIntoView(sectionId);
-        addOrRemoveActiveClass(sectionId);
-    })
-}
+//     link.addEventListener("click", function(e){
+//         e.preventDefault();
+//         linkToScrollIntoView(sectionId);
+//         addOrRemoveActiveClass(sectionId);
+//     })
+// }
 
-function linkToScrollIntoView(sectionId){
-    window.scrollTo({
-        top: sectionId === "#" ? 56 : document.querySelector(sectionId).offsetTop,
-        behavior: "smooth"
-    })
-}
+// function linkToScrollIntoView(sectionId){
+//     window.scrollTo({
+//         top: sectionId === "#" ? 56 : document.querySelector(sectionId).offsetTop,
+//         behavior: "smooth"
+//     })
+// }
 
-// Add class 'active' to section when near top of viewport
-function addOrRemoveActiveClass(sectionId){
-    for (const link of links){
-        if(link.getAttribute("data-link") === sectionId){
-            link.classList.add("activenow-class");
-        } else {
-            if (link.classList.contains("activenow-class")){
-                link.classList.remove("activenow-class");           
-            }
-        }
-    }
+// // Add class 'active' to section when near top of viewport
+// function addOrRemoveActiveClass(sectionId){
+//     for (const link of links){
+//         if(link.getAttribute("data-link") === sectionId){
+//             link.classList.add("activenow-class");
+//         } else {
+//             if (link.classList.contains("activenow-class")){
+//                 link.classList.remove("activenow-class");           
+//             }
+//         }
+//     }
     
-}
+// }
 
 
 
@@ -137,15 +137,15 @@ function addOrRemoveActiveClass(sectionId){
 
 // Set sections as active
 
-function responsiveMenu(){
-    const getnavbar__list = document.getElementById('cont');
-    console.log(getnavbar__list);
+// function responsiveMenu(){
+//     const getnavbar__list = document.getElementById('cont');
+//     console.log(getnavbar__list);
 
-    if (getnavbar__list.className === "cont"){
-        getnavbar__list.className += " responsive"
-    } else {
-        getnavbar__list.className = "cont"
-    }
-}
+//     if (getnavbar__list.className === "cont"){
+//         getnavbar__list.className += " responsive"
+//     } else {
+//         getnavbar__list.className = "cont"
+//     }
+// }
 
-responsiveMenu()
+// responsiveMenu()
