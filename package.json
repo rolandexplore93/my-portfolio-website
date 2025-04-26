@@ -1,6 +1,5 @@
 {
   "name": "my-portfolio-website",
-  "homepage": "https://rolandexplore93.github.io/my-portfolio-website/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,9 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "clean": "gh-pages-clean && rm -rf dist && npm run build",
-    "deploy": "gh-pages -d dist --dotfiles --message 'Deploy Successful 🚀'"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
