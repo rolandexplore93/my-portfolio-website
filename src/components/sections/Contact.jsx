@@ -8,9 +8,14 @@ export const Contact = () => {
         email: "",
         message: "",
     });
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        console.log(import.meta.env.VITE_SERVICE_ID)
+        console.log(import.meta.env.VITE_TEMPLATE_ID)
+        console.log(e.target)
+        console.log(import.meta.env.VITE_PUBLIC_KEY)
 
         emailjs
             .sendForm(
